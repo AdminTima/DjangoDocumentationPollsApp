@@ -1,0 +1,13 @@
+{% extends 'polls/base.html'%}
+
+{% block title %}All questions{% endblock %}
+
+
+{% block content %}
+    <ul>
+        {% for question in latest_questions %}
+           <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}
